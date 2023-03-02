@@ -1,0 +1,10 @@
+export const baseUrl = "http://localhost:8000/";
+export const login = "api/token/"
+export const userDetails = "api/users/user_details";
+export const refreshToken = "api/token/refresh/";
+export const verifyToken = "api/token/verify/";
+export const userBlock = "api/users/block/"
+export const userDelete = "api/users/delete/"
+export const userCreate = "api/users/create"
+export const user = "api/users/user/"
+export const userUpdate = "api/users/update/"
