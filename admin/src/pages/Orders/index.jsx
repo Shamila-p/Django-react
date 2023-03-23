@@ -168,11 +168,8 @@ function Orders () {
 
                 <table>
                     <thead>
-                        <th>ID</th>
                         <th>USERANAME</th>
                         <th>EMAIL</th>
-                        <th>STATUS</th>
-                        <th>BLOCK/UNBLOCK</th>
                         <th>UPDATE</th>
                         <th>DELETE</th>
                     </thead>
@@ -181,35 +178,12 @@ function Orders () {
                         <tbody>
                             {users.map((user) => (
                                 <tr key={user.id}>
-                                    <td><span>{user.id}</span></td>
                                     <td>
                                         <div>
-                                            <img 
-                                                src={`${base}${user.image}`}
-                                                className='dashboard-content-avatar'
-                                                alt={user.username} />
                                             <span>{user.username}</span>
                                         </div>
                                     </td>
                                     <td><span>{user.email}</span></td>
-                                    <td>
-                                        <div>
-                                            {user.is_active ?
-                                                <img
-                                                    src={DoneIcon}
-                                                    alt='paid-icon'
-                                                    className='dashboard-content-icon' />
-                                            : 
-                                                <img
-                                                    src={CancelIcon}
-                                                    alt='canceled-icon'
-                                                    className='dashboard-content-icon' />
-                                            }
-                                            {/* <span>{user.is_active }</span> */}
-                                        </div>
-                                    </td>
-                                    
-                                    <td><span>{user.is_active? <button className='block-button' onClick={() => handleBlock(user.id)}>BLOCK</button> : <button className='unblock-button' onClick={() => handleBlock(user.id)}>UNBLOCK</button>}</span></td>
                                     <td><span><Link to={`/dashboard/update/${user.id}`} className="update-button">Update</Link></span></td>
                                     <td><span><button className='block-button' onClick={() => handleDelete(user.id)}>DELETE</button></span></td>
                                 </tr>

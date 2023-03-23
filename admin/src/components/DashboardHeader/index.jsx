@@ -91,17 +91,10 @@ function DashboardHeader () {
 
     return(
         <div className='dashbord-header-container'>
-            <button className='dashbord-header-btn' onClick={()=>navigate('/dashboard/create')}>Create User</button>
-
             <div className='dashbord-header-right'>
-                
-                <img
-                    className='dashbord-header-avatar'
-                    src={imageurl}
-                    alt = "admin"
-                    onClick={()=>navigate('/dashboard')} />
+                    <button className='dashbord-header-btn' onClick={()=>navigate('/dashboard/create')}>Add User</button>
+                    <button className='dashbord-header-btn' onClick={handleLogout}>LogOut</button>
             </div>
-            <button className='dashbord-header-btn' onClick={handleLogout}>LogOut</button>
         </div>
     )
 }

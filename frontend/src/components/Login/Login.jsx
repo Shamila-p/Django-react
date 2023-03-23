@@ -6,6 +6,8 @@ import {login} from '../../utils/Constants'
 // import jwt_decode from "jwt-decode";
 import { useDispatch } from "react-redux";
 import { setAuthToken } from "../../redux/authTokenSlice";
+import './Login.css'
+import { Link } from 'react-router-dom';
 
 
 
@@ -62,40 +64,48 @@ function Login() {
           });
     }
 
-  return (
-    <>
-    <form onSubmit={handleLogin} className="sign-in-form">
-            <h2 className="title">Sign in</h2>
-            <div className="input-field">
-              <i className="fas fa-user"></i>
+    return (
+
+      <div className='outer-container'>
+        <div className='inner-container'>
+          <div className='logo'>
+            <h1>LOGIN</h1>
+            <img src='/images/login.jpg' alt='My Image' />
+          </div>
+          <div className='form-container'>
+          <form onSubmit={handleLogin} className="sign-in-form">
+            
+          <div className='form-field'>
+            <label>Username:</label>
+            <input
+                  type="text"
+                  placeholder="Username"
+                  value={username}
+                  onChange={(e) => {
+                      setUsername(e.target.value);
+                          }} 
+                  />
+          </div>
+           
+            <div className='form-field'>
+              <label>Password:</label>
               <input
-                type="text"
-                placeholder="Username"
-                value={username}
+                type="password"
+                placeholder="Password"
+                value={password}
                 onChange={(e) => {
-                    setUsername(e.target.value);
-                        }} 
+                  setPassword(e.target.value);
+                }}
                 />
             </div>
-            <div className="input-field">
-              <i className="fas fa-lock"></i>
-              <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-              />
-            </div>
-            <input
-            type="submit"
-            value="Login"
-            className="btn solid"
-            />
-          </form>
-    </>
-  )
+            <button type='submit'>Login</button>
+            <p>Not registered yet?<Link to="/signup">Register</Link></p>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    )
 }
 
 export default Login

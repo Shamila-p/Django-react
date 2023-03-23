@@ -11,13 +11,14 @@
     padding-left: 2em;
     padding-right: 2em;
     cursor: pointer;
-    color: #FFFFFF;
+    color: white;
     font-size: 0.9rem;
     font-weight: 700;
     border-radius: 8px;
     text-transform: uppercase;
-    border: 1px solid #015C92;
-    background-color: #015C92;
+    border: 1px solid #4806aa;
+    background-color: #4806aa;
+    margin-right: 10px;
 }
 .dashbord-header-btn:hover {
     color: #015C92;
@@ -28,7 +29,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-}
+    margin-left: auto;
+  }
 .dashbord-header-icon {
     width: 20px;
     margin-right: 10px;

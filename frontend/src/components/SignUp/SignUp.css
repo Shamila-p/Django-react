@@ -1,0 +1,134 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 100%;
+    margin-top: 100px;
+  }
+  
+  .innermost-container {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    width: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    padding-bottom: 150px;
+   
+  }
+  
+  .logo-img {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-img img {
+    height: 100%;
+    width: auto;
+    margin-left: 17px;
+  }
+  
+  .form-main-container {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    margin-top: 80px;
+    margin-left: -260px;
+  }
+  
+  .form-fields{
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  input {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    background-color: transparent;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #000;
+  }
+  button {
+    background-color: #5497e3; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+  
+  
+  /* For screens with max-width 768px */
+@media screen and (max-width: 1000px) {
+    .main-container {
+      margin-top: 50px;
+      height: auto;
+    }
+  
+    .innermost-container {
+      flex-direction: column;
+      height: auto;
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .logo-img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  
+    .logo-img img {
+      height: auto;
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .form-main-container {
+      width: 100%;
+      height: auto;
+      padding: 0;
+    }
+  
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+  

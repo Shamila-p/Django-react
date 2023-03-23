@@ -1,9 +1,5 @@
 import React, { useState, useEffect} from "react";
-import "./LoginForm.css";
-import Card from "../Card/Card";
-import GoogleIcon from "@mui/icons-material/Google";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import "./Form.css";
 import axios from "../../constants/axios"
 import { login } from "../../constants/urls";
 import Swal from "sweetalert2";
@@ -84,46 +80,44 @@ const LoginForm = ({ setIsLoggedIn }) => {
   };
 
   return (
-    <div className="login-body">
-    <Card>
-      <h1 className="title">Sign In</h1>
-      <p className="subtitle">
-        Please log in using your username and password!
-      </p>
-      <form onSubmit={handleSubmit}>
-        <div className="inputs_container">
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          {/* {renderErrorMsg("username")}
-          {renderErrorMsg("noUsername")} */}
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          {/* {renderErrorMsg("password")}
-          {renderErrorMsg("noPassword")} */}
+    <div className='outer-container'>
+      <div className='inner-container'>
+        <div className='logo'>
+          <h1>ADMIN LOGIN</h1>
+          <img src='./images/login.jpg' alt='My Image' />
         </div>
-        <input type="submit" value="Log In" className="login_button" />
+      <form onSubmit={handleSubmit}>
+
+        <div className='form-container'>
+          
+          <div className='form-field'>
+            <label>Username</label>
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+         
+          <div className='form-field'>
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type='submit'>Login</button>
+        </div>
       </form>
-      {/* <div className="link_container">
-        <a href="" className="small">
-          Forgot Password?
-        </a>
-      </div> */}
-      <div className="icons">
-        <GoogleIcon className="icon" />
-        <FacebookIcon className="icon" />
-        <TwitterIcon className="icon" />
+
       </div>
-    </Card>
     </div>
   );
 };
 
 export default LoginForm;
+
+

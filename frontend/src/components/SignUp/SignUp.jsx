@@ -3,6 +3,8 @@ import { register } from "../../utils/Constants";
 import { useNavigate } from 'react-router-dom';
 import axios from '../../utils/axios';
 import Swal from "sweetalert2";
+import { Link } from 'react-router-dom';
+import './SignUp.css'
 
 function SignUp() {
 
@@ -49,47 +51,59 @@ function SignUp() {
             });
     }
 
-  return (
-    <>
-    <form onSubmit={handleSubmit} className="sign-up-form">
-        <h2 className="title">Sign up</h2>
-        <div className="input-field">
-            <i className="fas fa-user"></i>
-            <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => {
-              setUsername(e.target.value);
-                  }}
-            />
+    return (
+      <div className='main-container'>
+        <div className='innermost-container'>
+          <div className='logo-img'>
+            <img src='/images/reg.jpg' alt='My Image' />
+          </div>
+          <div className='form-main-container'>
+          <h1>SIGNUP</h1>
+          <form onSubmit={handleSubmit} className="sign-up-form">
+  
+          <div className='form-fields'>
+              <label>Username:</label>
+              <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => {
+                setUsername(e.target.value);
+                    }}
+              />
+            </div>
+            <div className='form-fields'>
+              <label>Email:</label>
+              <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                    }}
+              />
+            </div>
+            
+            <div className='form-fields'>
+              <label>Password:</label>
+              <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                    }}
+              />
+            </div>
+            <button type='submit'>Sign Up</button>
+          </form>
+          <p>Already have an account? <Link to="/login">Login</Link></p>
+
+          </div>
         </div>
-        <div className="input-field">
-            <i className="fas fa-envelope"></i>
-            <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-                  }}
-            />
-        </div>
-        <div className="input-field">
-            <i className="fas fa-lock"></i>
-            <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-                  }}
-            />
-        </div>
-        <input type="submit" className="btn" value="Sign up" />
-    </form>
-    </>
-  )
+  
+      </div>
+    );
 }
 
 export default SignUp
